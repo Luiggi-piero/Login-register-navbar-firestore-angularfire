@@ -1,5 +1,5 @@
 # Nabar Registro Login firebase
-*Actualizar configuración Firebase* 
+:umbrella: :zap: **Actualizar configuración Firebase** 
 ![configuracion firebase](https://user-images.githubusercontent.com/86317658/134694148-40b949be-3ccb-4c54-a66f-296069634764.PNG)
 
 

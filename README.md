@@ -1,5 +1,7 @@
 # Nabar Registro Login firebase
-Actualizar configuración Firebase 
+*Actualizar configuración Firebase* 
+![configuracion firebase](https://user-images.githubusercontent.com/86317658/134694148-40b949be-3ccb-4c54-a66f-296069634764.PNG)
+
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.3.
 

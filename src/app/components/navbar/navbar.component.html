@@ -1,0 +1,162 @@
+<!-- <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+            <img src="assets/logo/huella-dog-white.svg" alt="" width="30" height="24" class="d-inline-block align-text-top"> Project R
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon">aqui</span>
+      </button>
+        <div class="collapse navbar-collapse" id="navbarScroll">
+            <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 150px;">
+                <li class="nav-item" routerLinkActive="active">
+                    <a class="nav-link" aria-current="page" [routerLink]="['home']">Home</a>
+                </li>
+                <li class="nav-item" routerLinkActive="active">
+                    <a class="nav-link" [routerLink]="['protegida']">Protegida</a>
+                </li>
+                <li *ngIf="mostrarAdmin()" class="nav-item" routerLinkActive="active">
+                    <a class="nav-link" [routerLink]="['administrador']">Administrador</a>
+                </li>
+            </ul>
+            <form class="d-flex">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success" type="submit">Search</button>
+            </form>
+
+            <div class="mr-3 col-sm-8 col-4 text-right flex-header-menu justify-content-end">
+                <form class="mr-3">
+                    <input type="text" class="form-control search-box" placeholder="Enter keywords.." (keyup.enter)="funcion()" />
+                </form>
+                <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 150px;">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <img src="assets/logo/user2.svg" alt="Adam" class="rounded-circle" width="37px" height="37px">
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
+                            <li><a class="dropdown-item" href="#"><i class="fa fa-user pr-2"></i>&nbsp;&nbsp; Profile</a></li>
+                            <li><a class="dropdown-item" href="#"><i class="fa fa-th-list pr-2"></i>&nbsp;&nbsp; Tasks</a></li>
+                            <li><a class="dropdown-item" href="#"><i class="fa fa-book pr-2"></i>&nbsp;&nbsp; Projects</a></li>
+                            <li><a class="dropdown-item" href="#" *ngIf="autenticado()" (click)="salir()"><i class="fa fa-power-off pr-2"></i>&nbsp;&nbsp; Salir</a></li>
+                            <li><a class="dropdown-item" *ngIf="!autenticado()" [routerLink]="['login']"><i class="fa fa-power-off pr-2"></i>&nbsp;&nbsp; Iniciar Sesión</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</nav> -->
+<div class="envoltura" (window:resize)="onResize($event)">
+    <div [ngClass]="{'collapsei': flag}" class="navi">
+        <div class="nav-menu flex-rowi">
+            <div class="nav-bran" [ngClass]="{'menu-nav': (windowWidth >= 750), 'menu-nav-column':(windowWidth <= 750)}">
+                <a class="control-width">
+                    <img class="logo" src="assets/logo/huella-dog-white.svg" alt="" width="30" height="24">Project R
+                </a>
+                <ul class="nav-elements">
+                    <li class="nav-element" routerLinkActive="active">
+                        <a [routerLink]="['home']">Principal</a>
+                    </li>
+                    <li class="nav-element" routerLinkActive="active">
+                        <a [routerLink]="['products']">Productos</a>
+                    </li>
+                    <li class="nav-element" routerLinkActive="active">
+                        <a [routerLink]="['offers']">Ofertas</a>
+                    </li>
+                    <!-- <li class="nav-element" routerLinkActive="active">
+                        <a [routerLink]="['protegida']">Protegida</a>
+                    </li>
+                    <li *ngIf="mostrarAdmin()" class="nav-element" routerLinkActive="active">
+                        <a [routerLink]="['administrador']">Administrador</a>
+                    </li> -->
+                </ul>
+            </div>
+            <div (click)="toggleEvent()" class="toggle-collapse">
+                <div class="toggle-icon">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </div>
+            <!-- <div>
+                <ul class="nav-elements">
+                    <li class="nav-element">
+                        <a href="">algo1</a>
+                    </li>
+                    <li class="nav-element">
+                        <a href="">algo2</a>
+                    </li>
+                    <li class="nav-element">
+                        <a href="">algo3</a>
+                    </li>
+                </ul>
+            </div> -->
+            <div class="social">
+                <ul class="nav-user">
+                    <li [ngClass]="{'user-icon-collapse': flag}" (click)="showUserMenu()" class="user-icon user-icon-click">
+                        <a class="user-icon-logo"><i class="far fa-user fa-2x user-i"></i></a>
+                        <ul [ngClass]="{'user-menu-collapse': flag, 'user-menu-nocollapse':!flag}" class="user-menu-nocollapse">
+                            <li>
+                                <a>
+                                    <i class="fa fa-user pr-2"></i>&nbsp;&nbsp; Profile
+                                </a>
+                            </li>
+                            <li>
+                                <a [routerLink]="['myCart']">
+                                    <i class="fas fa-shopping-cart"></i>&nbsp;&nbsp; Mi carrito
+                                </a>
+                            </li>
+                            <li>
+                                <a [routerLink]="['myShopping']">
+                                    <i class="fas fa-hand-holding-medical"></i>&nbsp;&nbsp; Mis compras
+                                </a>
+                            </li>
+                            <li *ngIf="autenticado()">
+                                <a (click)="salir()" [routerLink]="['home']">
+                                    <i class="fa fa-power-off pr-2"></i>&nbsp;&nbsp; Salir
+                                </a>
+                            </li>
+                            <li *ngIf="!autenticado()">
+                                <a [routerLink]="['login']">
+                                    <i class="fa fa-power-off pr-2"></i>&nbsp;&nbsp; Iniciar Sesión
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- <script>
+        var nav = document.querySelector('.navi');
+        var toggle = document.querySelector('.toggle-collapse');
+        var userMenu = document.querySelector('.nav-user ul');
+
+        var anchoVentana = window.innerWidth;
+        // var userIcon = document.querySelector('.nav-user li');
+
+        window.onresize = function() {
+
+            anchoVentana = window.innerWidth;
+            if (anchoVentana >= 750) {
+                nav.classList.remove('collapse');
+                userMenu.classList.add('user-menu-nocollapse');
+                userMenu.classList.remove('user-menu-collapse');
+            }
+
+        };
+
+        toggle.onclick = function() {
+            nav.classList.toggle('collapse');
+            if (nav.classList.contains('collapse')) {
+                userMenu.classList.remove('user-menu-nocollapse');
+                userMenu.classList.add('user-menu-collapse');
+            } else {
+                userMenu.classList.add('user-menu-nocollapse');
+                userMenu.classList.remove('user-menu-collapse');
+            }
+        }
+
+        // userIcon.onmouseover = function() {
+        //     console.log('vamo');
+        // }
+    </script> -->
+</div>

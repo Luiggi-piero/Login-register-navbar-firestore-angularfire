@@ -1,0 +1,246 @@
+.envoltura {
+    margin: 0;
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+
+
+/* ------------- clases y elementos globales ----------- */
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
+.flex-rowi {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+
+/* -----x-------- clases y elementos globales ------x----- */
+
+
+/*---------- navbar -----------*/
+
+.navi {
+    background: var(--secondary-color);
+    padding: 1rem 2rem;
+    height: 0rem;
+    min-height: 15vh;
+    /* min-height: 60vh; */
+    overflow: hidden;
+    transition: 1s;
+}
+
+.navi .nav-menu {
+    justify-content: space-between;
+}
+
+.control-width {
+    width: auto !important;
+    display: flex !important;
+}
+
+.logo {
+    display: block;
+}
+
+.navi .toggle-collapse {
+    position: absolute;
+    width: 8%;
+    top: 0;
+    right: 1rem;
+    display: none;
+    cursor: pointer;
+    margin-top: .5rem;
+}
+
+.navi .toggle-collapse .toggle-icon {
+    display: flex;
+    justify-content: flex-end;
+    padding: 1.6rem 0;
+}
+
+.navi .toggle-collapse .toggle-icon i {
+    font-size: 1.4rem;
+    color: var(--primary-color);
+}
+
+.collapsei {
+    height: 26rem;
+}
+
+.menu-nav {
+    display: flex;
+    /* margin-left: 1px; */
+}
+
+.navi .nav-bran {
+    display: flex;
+}
+
+.menu-nav-column {
+    flex-direction: column;
+}
+
+.navi .nav-bran a {
+    font-size: 1.6rem;
+    padding: 1rem 0;
+    display: block;
+    /* width: 70px; */
+    color: var(--primary-color);
+}
+
+.navi .nav-elements {
+    display: flex;
+    margin: 0;
+}
+
+.navi .nav-elements .nav-element {
+    padding: 7px 1rem;
+    display: flex;
+    position: relative;
+    /* text-align: center; */
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    height: 50px;
+    margin-top: 0.9rem;
+    /* max-height: 2rem; */
+}
+
+.navi .nav-elements .nav-element a {
+    font-size: 20px;
+}
+
+.navi .nav-elements .nav-element:hover {
+    background: #fff;
+}
+
+.navi .nav-elements .nav-element:hover a {
+    color: #000;
+}
+
+.navi .social {
+    padding: 1.4rem 0;
+}
+
+.navi .social .nav-user i {
+    padding: 0 .2rem;
+}
+
+.navi .social .nav-user {
+    margin: 0;
+    padding: .3rem 0;
+}
+
+.user-icon {
+    width: 90px;
+    height: 55px;
+    cursor: pointer;
+    /* padding: 0 20px; */
+    display: flex;
+    justify-content: flex-end;
+}
+
+.user-icon .user-icon-logo {
+    color: var(--primary-color);
+    text-align: center;
+}
+
+.user-icon .user-icon-logo .user-i {
+    width: 80px;
+    height: 60px;
+}
+
+
+/* Clase al seleccionar user-icon */
+
+.user-icon-click {
+    display: initial;
+}
+
+.user-icon-collapse {
+    justify-content: end !important;
+}
+
+.navi .social .nav-user li ul {
+    display: none;
+    background: #ffffff;
+    border: 1px solid #cccccc;
+    position: absolute;
+    padding: 0;
+    height: auto;
+    width: 200px;
+    z-index: 100;
+}
+
+.navi .social .nav-user li:hover ul {
+    display: block;
+}
+
+.navi .social .nav-user li ul li {
+    width: 100%;
+    display: flex;
+    text-align: center;
+}
+
+.navi .social .nav-user li ul li a {
+    padding: 1rem 2rem;
+    line-height: unset;
+    white-space: normal;
+    width: 100%;
+}
+
+.navi .social .nav-user li ul li a:hover {
+    background-color: #efefef;
+}
+
+.user-menu-collapse {
+    left: 14%;
+    top: 388px;
+}
+
+.user-menu-nocollapse {
+    /* right: 85px; */
+    right: 5%;
+    top: 70px;
+}
+
+
+/*-----x----- navbar-----x------*/
+
+
+/*  responsive  */
+
+@media (max-width: 750px) {
+    .navi .nav-elements {
+        flex-direction: column;
+        margin-top: 21px;
+        padding: 0;
+    }
+    .navi .nav-menu {
+        padding: 0;
+        flex-direction: column;
+    }
+    .navi .toggle-collapse {
+        display: initial;
+    }
+    .navi .toggle-collapse .toggle-icon {
+        padding: 2.2rem 1rem;
+    }
+}
+
+@media (max-width: 413px) {
+    .navi .toggle-collapse .toggle-icon {
+        padding: 2.4rem 1.4rem;
+    }
+}
+
+
+/* x  responsive x */

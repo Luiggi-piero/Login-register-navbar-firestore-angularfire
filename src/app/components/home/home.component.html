@@ -1,0 +1,45 @@
+<p>home works! Luiggi vista main</p>
+<br><br>
+<div class="container">
+    <h2>CLIENTES</h2>
+    <table class="table">
+        <thead class="table-dark">
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">ID</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Email</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let cliente of clientes;let i = index">
+                <th scope="row">{{ i+1 }}</th>
+                <td>{{ cliente.id }}</td>
+                <td>{{ cliente.name }}</td>
+                <td>{{ cliente.email }}</td>
+            </tr>
+        </tbody>
+    </table>
+    <br><br>
+    <h2>ADMINISTRADORES</h2>
+    <table class="table">
+        <thead class="table-dark">
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">ID</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Email</th>
+                <th scope="col">Clave</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let admin of administradores;let i = index">
+                <th scope="row">{{ i+1 }}</th>
+                <td>{{ admin.id }}</td>
+                <td>{{ admin.name }}</td>
+                <td>{{ admin.email }}</td>
+                <td>{{ admin.password }}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "mi-proyecto-ffced": {
+      "hosting": {
+        "mi-proyecto": [
+          "mi-proyecto-ffced"
+        ]
+      }
+    }
+  }
+}
